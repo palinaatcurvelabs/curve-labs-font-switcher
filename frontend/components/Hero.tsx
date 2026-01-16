@@ -1,23 +1,13 @@
 import React from 'react';
-import { HeroGridBackground } from './ui/HeroGridBackground';
 
 export const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen overflow-hidden bg-zinc-950">
-      {/* Grid background with scattered UI elements */}
-      <HeroGridBackground />
 
       {/* Centered content overlay - positioned below navbar with explicit height for proper centering */}
       <div className="absolute top-20 left-0 right-0 h-[calc(100vh-80px)] z-10 flex items-center justify-center pointer-events-none">
         <div className="max-w-[1400px] px-8 flex flex-col items-center relative -mt-[280px]">
-          {/* Radial gradient for readability */}
-          <div
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[157.5%] h-[157.5%] -z-10"
-            style={{
-              background: 'radial-gradient(circle at center, #0D0D0E 18%, rgba(13, 13, 14, 0) 100%)',
-              filter: 'blur(50px)',
-            }}
-          />
+
 
           {/* "We Build" text */}
           <p
