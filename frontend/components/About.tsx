@@ -62,9 +62,9 @@ export const About: React.FC = () => {
   }, []);
 
   return (
-    <Section id="about" className="bg-black">
-      <div className="max-w-[1600px] mx-auto border-x border-border" style={{ backgroundColor: '#000000' }}>
-        <div className="p-8 lg:p-12 border-b border-border" style={{ backgroundColor: '#000000' }}>
+    <Section id="about" className="bg-background">
+      <div className="max-w-[1600px] mx-auto border-x border-border">
+        <div className="p-8 lg:p-12 border-b border-border">
           <h2 className="font-mono text-xs text-zinc-500 uppercase tracking-widest">[03] About</h2>
         </div>
 
