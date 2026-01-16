@@ -68,7 +68,7 @@ export const About: React.FC = () => {
           <h2 className="font-mono text-xs text-zinc-500 uppercase tracking-widest">[03] About</h2>
         </div>
 
-        <div className="p-8 lg:p-12 min-h-[70vh] flex items-center">
+        <div className="p-8 lg:p-12 min-h-[70vh] flex items-center" style={{ backgroundColor: '#000000' }}>
           <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24">
 
             {/* Left: Text Content - Left Aligned */}
