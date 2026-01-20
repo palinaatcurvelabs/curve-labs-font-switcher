@@ -27,38 +27,6 @@ export const About: React.FC = () => {
       }
     }
 
-    // 2. Targeted Watermark Removal (Best Effort JS)
-    const removeWatermark = () => {
-      const links = document.querySelectorAll('a[href*="unicorn.studio"]');
-      links.forEach((link) => {
-        const el = link as HTMLElement;
-        el.style.setProperty('display', 'none', 'important');
-
-        let parent = el.parentElement;
-        let levels = 0;
-        while (parent && levels < 5) {
-          const rect = parent.getBoundingClientRect();
-          if (rect.width > 0 && rect.width < 350 && rect.height < 100) {
-            parent.style.setProperty('display', 'none', 'important');
-            parent.style.setProperty('visibility', 'hidden', 'important');
-            parent.style.setProperty('opacity', '0', 'important');
-            parent.style.setProperty('pointer-events', 'none', 'important');
-          } else if (rect.width > 350 || rect.height > 100) {
-            break;
-          }
-          parent = parent.parentElement;
-          levels++;
-        }
-      });
-    };
-
-    const intervalId = setInterval(removeWatermark, 50);
-    const timeoutId = setTimeout(() => clearInterval(intervalId), 10000);
-
-    return () => {
-      clearInterval(intervalId);
-      clearTimeout(timeoutId);
-    };
   }, []);
 
   return (
@@ -102,22 +70,7 @@ export const About: React.FC = () => {
                   style={{ maxWidth: '100%', backgroundColor: '#000000' }}
                 />
 
-                {/* 
-                    Black Box Cover-up 
-                    Positioned to obscure the watermark at the bottom center.
-                    Matches the page background color.
-                */}
-                <div
-                  className="absolute z-50 pointer-events-none"
-                  style={{
-                    bottom: '20px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    width: '220px',
-                    height: '60px',
-                    backgroundColor: '#000000'
-                  }}
-                />
+
               </div>
             </div>
 
