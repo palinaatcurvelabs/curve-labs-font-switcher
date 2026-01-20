@@ -96,9 +96,7 @@ export const Lace: React.FC = () => {
                 LACE
               </h2>
               <p className="text-[16px] md:text-[18px] text-white font-light leading-relaxed max-w-2xl">
-                From static archives to evolutive cognitive systems.
-                <br /><br />
-                Capture fragments. Watch patterns emerge. Inhabit your own knowledge.
+                Graph-based knowledge infrastructure. Your documents, notes, and research become extensible structure with no overhead. AI for automated organization and research.
               </p>
             </div>
 

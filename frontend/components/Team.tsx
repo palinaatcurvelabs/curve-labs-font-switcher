@@ -6,17 +6,17 @@ const team: TeamMember[] = [
   {
     name: 'Cem Dagdelen',
     role: 'Founder',
-    bio: 'Economist turned systems designer. Building at the human-AI interface.'
+    bio: 'Systems designer. Building at the human-AI interface.'
   },
   {
     name: 'Oguzhan (Ozzi) Yayla',
-    role: 'CTO',
+    role: 'Co-founder',
     bio: 'AI Systems Architect. Agent of agents.'
   },
   {
-    name: 'Palina Sarokina',
-    role: 'Executive Associate',
-    bio: "Operations and coordination. The lab's connective tissue."
+    name: 'Polina Sarekina',
+    role: 'Operations',
+    bio: "Operations and connections. The lab's connective tissue."
   }
 ];
 

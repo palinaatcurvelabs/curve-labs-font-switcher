@@ -78,12 +78,15 @@ export const About: React.FC = () => {
               </h3>
               <div className="px-0 lg:pl-16">
                 <p className="text-zinc-300 leading-relaxed font-light text-left lg:text-justify" style={{ fontSize: '20px' }}>
-                  We build digital souls—systems that persist, learn, and evolve. From coordination infrastructure for collectives to cognitive architectures for human / ai collaboration, our work focuses on what holds intelligence together across complexity and change.
+                  We are experimentalists who build production software as research, exploring affordances of new technological paradigms.
+                </p>
+                <p className="text-zinc-300 leading-relaxed font-light text-left lg:text-justify mt-6" style={{ fontSize: '20px' }}>
+                  Extending individual capabilities towards self-actualisation while exploring non-coercive pathways towards collective cohesion are primary motivations behind our expeditions into the dark forest.
                 </p>
 
                 <div className="pt-8 opacity-80 border-t border-white/10 mt-8">
                   <p className="font-mono text-[13px] text-zinc-500 tracking-[0.2em] uppercase">
-                    Practitioners who research. Researchers who build. Est 2020, Berlin.
+                    Est 2020. Berlin.
                   </p>
                 </div>
               </div>
