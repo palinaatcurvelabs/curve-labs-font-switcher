@@ -63,7 +63,7 @@ export const About: React.FC = () => {
             <div className="w-full lg:w-1/2 flex items-center justify-center order-2 lg:order-2 pointer-events-auto relative">
               <div className="relative" style={{ backgroundColor: '#000000' }}>
                 <div
-                  data-us-project="uTMlhzSdg1bVKwFrGPmr"
+                  data-us-project-src="/about-animation.json"
                   className="w-[320px] h-[430px] lg:w-[540px] lg:h-[730px]"
                   style={{ maxWidth: '100%', backgroundColor: '#000000' }}
                 />
