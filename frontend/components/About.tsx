@@ -26,7 +26,6 @@ export const About: React.FC = () => {
         window.UnicornStudio.init();
       }
     }
-
   }, []);
 
   return (
@@ -62,15 +61,12 @@ export const About: React.FC = () => {
 
             {/* Right: Unicorn Studio Animation Embed */}
             <div className="w-full lg:w-1/2 flex items-center justify-center order-2 lg:order-2 pointer-events-auto relative">
-              {/* Wrapper with relative positioning for the cover box */}
               <div className="relative" style={{ backgroundColor: '#000000' }}>
                 <div
                   data-us-project="uTMlhzSdg1bVKwFrGPmr"
                   className="w-[320px] h-[430px] lg:w-[540px] lg:h-[730px]"
                   style={{ maxWidth: '100%', backgroundColor: '#000000' }}
                 />
-
-
               </div>
             </div>
 
