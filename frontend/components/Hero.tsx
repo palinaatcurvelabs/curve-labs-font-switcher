@@ -23,7 +23,7 @@ export const Hero: React.FC = () => {
           </p>
 
           {/* "Digital Souls" ASCII art SVG */}
-          <div className="w-[90vw] md:w-[75vw] max-w-[1300px] mt-4 mx-auto relative" style={{ aspectRatio: '1303.4 / 271.46' }}>
+          <div className="w-[88vw] md:w-[73vw] max-w-[1280px] mt-4 mx-auto relative" style={{ aspectRatio: '1303.4 / 271.46' }}>
             <img
               src="/digital-souls.svg"
               alt="Digital Souls"
