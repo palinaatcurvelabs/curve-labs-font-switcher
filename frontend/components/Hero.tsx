@@ -9,21 +9,12 @@ export const Hero: React.FC = () => {
         <div className="max-w-[1400px] px-8 flex flex-col items-center relative -mt-[280px]">
 
 
-          {/* "We Build" SVG */}
-          <div className="mb-0 md:mb-1 flex justify-center w-full">
+          {/* "We Build Digital Souls" combined ASCII art SVG */}
+          <div className="flex justify-center w-full">
             <img
-              src="/we_build.svg"
-              alt="We Build"
-              className="w-[75vw] md:w-[55vw] max-w-[850px] h-auto"
-            />
-          </div>
-
-          {/* "Digital Souls" ASCII art SVG */}
-          <div className="w-[88vw] md:w-[73vw] max-w-[1280px] mt-4 mx-auto relative" style={{ aspectRatio: '1303.4 / 271.46' }}>
-            <img
-              src="/digital-souls.svg"
-              alt="Digital Souls"
-              className="w-full h-full"
+              src="/we_build_digital_souls.svg"
+              alt="We Build Digital Souls"
+              className="w-[90vw] md:w-[75vw] max-w-[1200px] h-auto"
             />
           </div>
         </div>
