@@ -105,7 +105,7 @@ export const Offerings: React.FC = () => {
 
                 {/* Content pinned to bottom */}
                 <div className="absolute bottom-0 left-0 right-0 z-10 px-8 sm:px-12 py-8 sm:py-12 text-left flex flex-col-reverse">
-                  <p className="text-zinc-200 text-[18px] leading-relaxed font-body-text h-[150px] overflow-hidden">
+                  <p className="text-zinc-200 text-[18px] leading-relaxed font-light h-[150px] overflow-hidden">
                     {domain.description}
                   </p>
                   <h4 className="text-[30px] font-header font-bold mb-4 text-white">{domain.title}</h4>
