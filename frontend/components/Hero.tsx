@@ -9,18 +9,14 @@ export const Hero: React.FC = () => {
         <div className="max-w-[1400px] px-8 flex flex-col items-center relative -mt-[280px]">
 
 
-          {/* "We Build" text */}
-          <p
-            className="font-stitch-warrior mb-0 md:mb-1 text-[60px] md:text-[89.54px] leading-none text-center"
-            style={{
-              color: '#FFFFFF66',
-              fontWeight: 400,
-              fontStyle: 'normal',
-              wordSpacing: '-0.4em',
-            }}
-          >
-            We Build
-          </p>
+          {/* "We Build" SVG */}
+          <div className="mb-0 md:mb-1 flex justify-center w-full">
+            <img
+              src="/we_build.svg"
+              alt="We Build"
+              className="w-[60vw] md:w-[45vw] max-w-[650px] h-auto"
+            />
+          </div>
 
           {/* "Digital Souls" ASCII art SVG */}
           <div className="w-[88vw] md:w-[73vw] max-w-[1280px] mt-4 mx-auto relative" style={{ aspectRatio: '1303.4 / 271.46' }}>
