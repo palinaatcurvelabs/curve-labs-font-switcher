@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import './styles/globals.css';
 
 // Prevent browser from restoring scroll (can jump to bottom on refresh).
 if ('scrollRestoration' in window.history) {

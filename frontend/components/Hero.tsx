@@ -14,7 +14,7 @@ export const Hero: React.FC = () => {
             <img
               src="/we_build.svg"
               alt="We Build"
-              className="w-[60vw] md:w-[45vw] max-w-[650px] h-auto"
+              className="w-[75vw] md:w-[55vw] max-w-[850px] h-auto"
             />
           </div>
 

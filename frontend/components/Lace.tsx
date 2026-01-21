@@ -7,6 +7,9 @@ const SemanticGraph3D = React.lazy(async () => {
   return { default: mod.SemanticGraph3D };
 });
 
+// Preload the graph chunk in the background after initial page load
+const preloadGraph = () => import('./SemanticGraph3D');
+
 export const Lace: React.FC = () => {
   // Assets in `public/` should be referenced by absolute URL paths in Vite.
   const laceStar = '/lace-star.svg';
@@ -19,6 +22,16 @@ export const Lace: React.FC = () => {
 
   useEffect(() => {
     const t = window.setTimeout(() => setFadeOverlayOut(true), 120);
+    return () => window.clearTimeout(t);
+  }, []);
+
+  // Preload and start rendering the graph after 1.5 seconds
+  useEffect(() => {
+    const t = window.setTimeout(() => {
+      preloadGraph().then(() => {
+        setShouldLoadGraph(true);
+      });
+    }, 1500);
     return () => window.clearTimeout(t);
   }, []);
 
