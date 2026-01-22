@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Section } from './ui/Section';
 
 interface DomainItem {
@@ -27,6 +27,28 @@ const domains: DomainItem[] = [
 ];
 
 export const Offerings: React.FC = () => {
+  const [isSerif, setIsSerif] = useState(false);
+
+  useEffect(() => {
+    const checkFont = () => {
+      const styleTag = document.getElementById('font-switcher-style');
+      if (styleTag?.textContent?.includes('Cardo')) {
+        setIsSerif(true);
+      } else {
+        setIsSerif(false);
+      }
+    };
+
+    checkFont();
+    const observer = new MutationObserver(checkFont);
+    const styleTag = document.getElementById('font-switcher-style');
+    if (styleTag) {
+      observer.observe(styleTag, { childList: true, characterData: true, subtree: true });
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <Section id="offerings" noBorderBottom className="bg-transparent border-t-0 pt-32 min-h-screen overflow-hidden">
       {/* One-piece fade from global grid -> solid background */}
@@ -52,7 +74,7 @@ export const Offerings: React.FC = () => {
           <div className="p-8 sm:p-12 border-b sm:border-b-0 sm:border-r border-border">
             <h2 className="font-mono text-xs text-zinc-500 mb-4 uppercase tracking-widest">[01] Domains</h2>
             <h3 className="text-xl sm:text-3xl font-header font-bold mb-6 tracking-tight">Domains</h3>
-            <p className="text-white text-[18px] leading-relaxed font-body-text">
+            <p className={`text-white leading-relaxed font-body-text ${isSerif ? 'text-[22px]' : 'text-[18px]'}`}>
               Our digital souls operate at two scales.
             </p>
           </div>
@@ -105,7 +127,7 @@ export const Offerings: React.FC = () => {
 
                 {/* Content pinned to bottom */}
                 <div className="absolute bottom-0 left-0 right-0 z-10 px-8 sm:px-12 py-8 sm:py-12 text-left flex flex-col-reverse">
-                  <p className="text-zinc-300 text-[18px] leading-relaxed font-normal h-[150px] overflow-hidden">
+                  <p className={`text-zinc-300 leading-relaxed font-normal h-[150px] overflow-hidden ${isSerif ? 'text-[18px]' : 'text-[18px]'}`}>
                     {domain.description}
                   </p>
                   <h4 className="text-[30px] font-header font-bold mb-4 text-white">{domain.title}</h4>

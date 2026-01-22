@@ -1,8 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Section } from './ui/Section';
 
 export const CTA: React.FC<{ onOpen?: () => void }> = ({ onOpen }) => {
+  const [isSerif, setIsSerif] = useState(false);
+
+  useEffect(() => {
+    // Check if font switcher has selected a serif font (Cardo)
+    const checkFont = () => {
+      const styleTag = document.getElementById('font-switcher-style');
+      if (styleTag?.textContent?.includes('Cardo')) {
+        setIsSerif(true);
+      } else {
+        setIsSerif(false);
+      }
+    };
+
+    // Initial check
+    checkFont();
+
+    // Watch for changes to the font switcher style tag
+    const observer = new MutationObserver(checkFont);
+    const styleTag = document.getElementById('font-switcher-style');
+    if (styleTag) {
+      observer.observe(styleTag, { childList: true, characterData: true, subtree: true });
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <Section id="contact" className="bg-background">
       <div className="max-w-[1600px] mx-auto border-x border-border flex flex-col lg:flex-row">
@@ -29,10 +55,19 @@ export const CTA: React.FC<{ onOpen?: () => void }> = ({ onOpen }) => {
           onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#fff'; e.currentTarget.style.color = '#000'; }}
           onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = ''; e.currentTarget.style.color = '#fff'; }}
         >
-          <ArrowRight
-            className="w-12 h-12 lg:w-16 lg:h-16 group-hover:translate-x-2 group-hover:scale-110"
-            style={{ transition: 'transform 150ms cubic-bezier(0.4, 0, 0.2, 1)' }}
-          />
+          {isSerif ? (
+            <span
+              className="text-6xl lg:text-8xl font-sans group-hover:translate-x-2 group-hover:scale-110 inline-block"
+              style={{ transition: 'transform 150ms cubic-bezier(0.4, 0, 0.2, 1)' }}
+            >
+              →
+            </span>
+          ) : (
+            <ArrowRight
+              className="w-12 h-12 lg:w-16 lg:h-16 group-hover:translate-x-2 group-hover:scale-110"
+              style={{ transition: 'transform 150ms cubic-bezier(0.4, 0, 0.2, 1)' }}
+            />
+          )}
         </button>
       </div>
     </Section>

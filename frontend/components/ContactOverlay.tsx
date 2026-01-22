@@ -87,8 +87,8 @@ export default function ContactOverlay({ isOpen, onClose }: Props) {
                                     <CheckCircle2 size={40} />
                                 </div>
                                 <div>
-                                    <h3 className="text-3xl">Transmission Complete</h3>
-                                    <p className="font-mono text-sm text-neutral-500">We’ve received your message.</p>
+                                    <h3 className="text-3xl font-mono">Transmission Complete</h3>
+                                    <p className="font-mono text-sm text-neutral-500">We've received your message.</p>
                                 </div>
                                 <button
                                     onClick={onClose}
@@ -104,7 +104,7 @@ export default function ContactOverlay({ isOpen, onClose }: Props) {
                                         <label className="block font-mono text-xs text-neutral-500 mb-1">
                                             [01] IDENTIFIER / NAME
                                         </label>
-                                        <input name="name" className="w-full border-b border-white/20 bg-transparent pt-0 pb-1 md:pb-2 text-base md:text-lg placeholder-neutral-700 focus:border-white outline-none" required />
+                                        <input name="name" className="w-full border-b border-white/20 bg-transparent pt-0 pb-1 md:pb-2 text-base md:text-lg placeholder-neutral-700 focus:border-white outline-none font-mono" required />
                                     </div>
                                     <div>
                                         <label className="block font-mono text-xs text-neutral-500 mb-1">
@@ -121,7 +121,7 @@ export default function ContactOverlay({ isOpen, onClose }: Props) {
                                     <button
                                         type="button"
                                         onClick={() => setDropdownOpen(!dropdownOpen)}
-                                        className={`w-full flex justify-between items-center border-b pt-0 pb-1 md:pb-2 text-sm md:text-base ${dropdownOpen ? 'border-white' : 'border-white/20 hover:border-white/50'}`}
+                                        className={`w-full flex justify-between items-center border-b pt-0 pb-1 md:pb-2 text-sm md:text-base font-mono ${dropdownOpen ? 'border-white' : 'border-white/20 hover:border-white/50'}`}
                                     >
                                         <span>{subject}</span>
                                         <CornerDownRight size={16} className={`transition ${dropdownOpen ? 'text-white' : 'text-neutral-600'}`} />
@@ -138,7 +138,7 @@ export default function ContactOverlay({ isOpen, onClose }: Props) {
                                                             setSubject(opt);
                                                             setDropdownOpen(false);
                                                         }}
-                                                        className={`w-full text-left px-3 py-2 border-b border-white/10 text-sm ${subject === opt ? 'bg-white/5 text-white' : 'text-neutral-400 hover:bg-white/5 hover:text-white'}`}
+                                                        className={`w-full text-left px-3 py-2 border-b border-white/10 text-sm font-mono ${subject === opt ? 'bg-white/5 text-white' : 'text-neutral-400 hover:bg-white/5 hover:text-white'}`}
                                                     >
                                                         {opt}
                                                     </button>
@@ -152,7 +152,7 @@ export default function ContactOverlay({ isOpen, onClose }: Props) {
                                     <label className="block font-mono text-xs text-neutral-500 mb-1">
                                         [04] MESSAGE
                                     </label>
-                                    <textarea name="message" rows={3} className="w-full border-b border-white/20 bg-transparent pt-0 pb-1 md:pb-2 text-base md:text-lg placeholder-neutral-700 focus:border-white outline-none resize-none md:h-56" required />
+                                    <textarea name="message" rows={3} className="w-full border-b border-white/20 bg-transparent pt-0 pb-1 md:pb-2 text-base md:text-lg placeholder-neutral-700 focus:border-white outline-none resize-none md:h-56 font-mono" required />
                                 </div>
 
                                 <div className="flex justify-end pt-4">

@@ -18,7 +18,28 @@ export const Lace: React.FC = () => {
 
   const [fadeOverlayOut, setFadeOverlayOut] = useState(false);
   const [shouldLoadGraph, setShouldLoadGraph] = useState(false);
+  const [isSerif, setIsSerif] = useState(false);
   const graphHostRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const checkFont = () => {
+      const styleTag = document.getElementById('font-switcher-style');
+      if (styleTag?.textContent?.includes('Cardo')) {
+        setIsSerif(true);
+      } else {
+        setIsSerif(false);
+      }
+    };
+
+    checkFont();
+    const observer = new MutationObserver(checkFont);
+    const styleTag = document.getElementById('font-switcher-style');
+    if (styleTag) {
+      observer.observe(styleTag, { childList: true, characterData: true, subtree: true });
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const t = window.setTimeout(() => setFadeOverlayOut(true), 120);
@@ -106,9 +127,9 @@ export const Lace: React.FC = () => {
             <div className="relative z-10">
               <h2 className="text-5xl md:text-7xl font-medium tracking-tighter mb-8 mt-8 md:mt-10 flex items-center gap-4">
                 <img src={laceStar} alt="" className="w-12 h-12 md:w-16 md:h-16" />
-                <span className="font-sans">LACE</span>
+                <span className="lace-title-inter font-semibold">LACE</span>
               </h2>
-              <p className="text-[16px] md:text-[20px] text-white leading-relaxed max-w-2xl font-body-text">
+              <p className={`text-white leading-relaxed max-w-2xl font-body-text ${isSerif ? 'text-[20px] md:text-[22px]' : 'text-[16px] md:text-[20px]'}`}>
                 Graph-based knowledge infrastructure.
                 <br /><br />
                 Your documents, notes, and research become extensible structure with no overhead. AI for automated organization and research.
@@ -120,10 +141,9 @@ export const Lace: React.FC = () => {
                 href="https://meetlace.ai/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 text-base md:text-lg font-body-text font-medium text-white hover:text-zinc-300 transition-colors border-b border-white hover:border-zinc-300 pb-1"
+                className="inline-flex items-center gap-3 text-base md:text-lg font-mono text-white hover:text-zinc-300 transition-colors border-b border-white hover:border-zinc-300 pb-1"
               >
-                <span>EXPLORE LACE</span>
-                <span className="font-sans">→</span>
+                EXPLORE LACE →
               </a>
             </div>
           </div>

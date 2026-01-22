@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
-type FontOption = 'inter' | 'cardo' | 'work-sans';
+type FontOption = 'inter' | 'cardo' | 'darker-grotesque';
 
 const FONT_OPTIONS = [
   { id: 'inter' as const, name: 'Inter', family: 'Inter, sans-serif' },
   { id: 'cardo' as const, name: 'Cardo', family: 'Cardo, serif' },
-  { id: 'work-sans' as const, name: 'Work Sans', family: '"Work Sans", sans-serif' },
+  { id: 'darker-grotesque' as const, name: 'Darker Grotesque', family: 'Darker Grotesque, sans-serif' },
 ];
 
 export const FontSwitcher: React.FC = () => {
@@ -27,24 +27,79 @@ export const FontSwitcher: React.FC = () => {
       }
 
       styleTag.textContent = `
-        body *:not(.font-mono):not([class*="font-mono"]):not(nav):not(nav *):not(code):not(pre):not(kbd):not(samp) {
+        /* Force Darker Grotesque everywhere except mono */
+        * {
           font-family: ${selectedFontData.family} !important;
         }
-        /* Specifically target non-mono elements */
-        .font-sans:not(.font-mono),
-        .font-header:not(.font-mono),
-        .font-body-text:not(.font-mono),
-        h1:not(.font-mono),
-        h2:not(.font-mono),
-        h3:not(.font-mono):not([class*="font-mono"]),
-        h4:not(.font-mono),
-        h5:not(.font-mono),
-        h6:not(.font-mono),
-        p:not(.font-mono):not([class*="font-mono"]),
-        [class*="font-header"]:not(.font-mono),
-        [class*="font-body-text"]:not(.font-mono) {
-          font-family: ${selectedFontData.family} !important;
+
+        /* Keep mono fonts */
+        .font-mono,
+        [class*="font-mono"],
+        code,
+        pre,
+        kbd,
+        samp,
+        button.font-mono *,
+        label.font-mono,
+        input.font-mono,
+        textarea.font-mono {
+          font-family: 'JetBrains Mono', monospace !important;
         }
+
+        /* Always keep LACE title in Inter */
+        .lace-title-inter {
+          font-family: Inter, sans-serif !important;
+        }
+
+        /* Adjust bio text size for Cardo */
+        ${selectedFont === 'cardo' ? `
+        .font-body-text.text-sm {
+          font-size: 16px !important;
+        }
+        ` : ''}
+
+        /* Adjust font sizes for Darker Grotesque - 4px larger + regular weight + tighter line height */
+        ${selectedFont === 'darker-grotesque' ? `
+        * {
+          font-weight: 400 !important;
+        }
+        p, .leading-relaxed {
+          line-height: 1.3 !important;
+        }
+        .text-\\[16px\\] {
+          font-size: 20px !important;
+        }
+        .text-\\[18px\\] {
+          font-size: 22px !important;
+        }
+        .text-\\[20px\\] {
+          font-size: 24px !important;
+        }
+        .text-\\[22px\\] {
+          font-size: 26px !important;
+        }
+        .text-\\[30px\\] {
+          font-size: 34px !important;
+        }
+        .md\\:text-\\[20px\\] {
+          font-size: 24px !important;
+        }
+        .md\\:text-\\[22px\\] {
+          font-size: 26px !important;
+        }
+        .font-body-text.text-sm {
+          font-size: 18px !important;
+        }
+        .font-bold, [class*="font-bold"] {
+          font-weight: 700 !important;
+        }
+        .font-semibold, [class*="font-semibold"] {
+          font-weight: 600 !important;
+        }
+        .font-medium, [class*="font-medium"] {
+          font-weight: 500 !important;
+        }
+        ` : ''}
       `;
     }
   }, [selectedFont]);
