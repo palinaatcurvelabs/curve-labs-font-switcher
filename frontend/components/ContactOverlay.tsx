@@ -110,7 +110,7 @@ export default function ContactOverlay({ isOpen, onClose }: Props) {
                                         <label className="block font-mono text-xs text-neutral-500 mb-1">
                                             [02] FREQUENCY / EMAIL
                                         </label>
-                                        <input name="email" type="email" className="w-full border-b border-white/20 bg-transparent pt-0 pb-1 md:pb-2 text-base md:text-lg placeholder-neutral-700 focus:border-white outline-none" required />
+                                        <input name="email" type="email" className="w-full border-b border-white/20 bg-transparent pt-0 pb-1 md:pb-2 text-base md:text-lg placeholder-neutral-700 focus:border-white outline-none font-mono" required />
                                     </div>
                                 </div>
 

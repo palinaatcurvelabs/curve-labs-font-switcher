@@ -8,9 +8,9 @@ export const Footer: React.FC = () => {
           <div className="w-full md:w-auto">
             <h2 className="font-mono text-sm font-bold text-white mb-4">CURVE LABS</h2>
             <div className="flex flex-col gap-2 font-mono text-xs text-zinc-500">
-              <span className="w-full">c/o Factory Works GmbH</span>
-              <span className="w-full">Rheinsberger Str. 76/77</span>
-              <span className="w-full">10115 Berlin</span>
+              <span className="w-full font-mono">c/o Factory Works GmbH</span>
+              <span className="w-full font-mono">Rheinsberger Str. 76/77</span>
+              <span className="w-full font-mono">10115 Berlin</span>
             </div>
           </div>
 

@@ -301,7 +301,7 @@ export const SemanticGraph3D: React.FC<SemanticGraph3DProps> = ({ compact = fals
         const fontSize = 42;
         const weight = '400';
 
-        ctx.font = `${weight} ${fontSize}px "Format_1452", sans-serif`;
+        ctx.font = `${weight} ${fontSize}px "JetBrains Mono", monospace`;
         ctx.fillStyle = '#22d3ee';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
@@ -799,7 +799,7 @@ export const SemanticGraph3D: React.FC<SemanticGraph3DProps> = ({ compact = fals
             <div className="flex flex-col gap-3 items-start">
               <div className="w-full">
                 <div className="flex items-center gap-3 mb-2">
-                  <h3 className="text-lg font-semibold text-white tracking-tight">{selectedNodeData.label}</h3>
+                  <h3 className="text-lg font-mono font-semibold text-white tracking-tight">{selectedNodeData.label}</h3>
                   <div className="px-1.5 py-0.5 text-[9px] font-mono font-medium bg-cyan-400/10 border border-cyan-400/30 text-cyan-300 uppercase tracking-wider">
                     {selectedNodeData.connections.length} Links
                   </div>

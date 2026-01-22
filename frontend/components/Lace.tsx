@@ -104,11 +104,11 @@ export const Lace: React.FC = () => {
             />
 
             <div className="relative z-10">
-              <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8 mt-8 md:mt-10 flex items-center gap-4">
+              <h2 className="text-5xl md:text-7xl font-medium tracking-tighter mb-8 mt-8 md:mt-10 flex items-center gap-4">
                 <img src={laceStar} alt="" className="w-12 h-12 md:w-16 md:h-16" />
-                LACE
+                <span className="font-sans">LACE</span>
               </h2>
-              <p className="text-[16px] md:text-[20px] text-white leading-relaxed max-w-2xl">
+              <p className="text-[16px] md:text-[20px] text-white leading-relaxed max-w-2xl font-body-text">
                 Graph-based knowledge infrastructure.
                 <br /><br />
                 Your documents, notes, and research become extensible structure with no overhead. AI for automated organization and research.
@@ -120,9 +120,10 @@ export const Lace: React.FC = () => {
                 href="https://meetlace.ai/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 text-base md:text-lg font-mono text-white hover:text-zinc-300 transition-colors border-b border-white hover:border-zinc-300 pb-1"
+                className="inline-flex items-center gap-3 text-base md:text-lg font-body-text font-medium text-white hover:text-zinc-300 transition-colors border-b border-white hover:border-zinc-300 pb-1"
               >
-                EXPLORE LACE →
+                <span>EXPLORE LACE</span>
+                <span className="font-sans">→</span>
               </a>
             </div>
           </div>

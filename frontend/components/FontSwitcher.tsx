@@ -1,24 +1,51 @@
 import React, { useEffect, useState } from 'react';
 
-type FontOption = 'darker-grotesque' | 'cardo' | 'eb-garamond';
+type FontOption = 'inter' | 'cardo' | 'work-sans';
 
 const FONT_OPTIONS = [
-  { id: 'darker-grotesque' as const, name: 'Darker Grotesque', family: 'Darker Grotesque' },
-  { id: 'cardo' as const, name: 'Cardo', family: 'Cardo' },
-  { id: 'eb-garamond' as const, name: 'EB Garamond', family: 'EB Garamond' },
+  { id: 'inter' as const, name: 'Inter', family: 'Inter, sans-serif' },
+  { id: 'cardo' as const, name: 'Cardo', family: 'Cardo, serif' },
+  { id: 'work-sans' as const, name: 'Work Sans', family: '"Work Sans", sans-serif' },
 ];
 
 export const FontSwitcher: React.FC = () => {
-  const [selectedFont, setSelectedFont] = useState<FontOption>('darker-grotesque');
+  const [selectedFont, setSelectedFont] = useState<FontOption>('inter');
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Update CSS variables when font changes
-    const root = document.documentElement;
+    // Apply font to all text elements directly
     const selectedFontData = FONT_OPTIONS.find(f => f.id === selectedFont);
 
     if (selectedFontData) {
-      root.style.setProperty('--font-main', selectedFontData.family);
+      // Create a style tag to override font-family
+      let styleTag = document.getElementById('font-switcher-style') as HTMLStyleElement;
+
+      if (!styleTag) {
+        styleTag = document.createElement('style');
+        styleTag.id = 'font-switcher-style';
+        document.head.appendChild(styleTag);
+      }
+
+      styleTag.textContent = `
+        body *:not(.font-mono):not([class*="font-mono"]):not(nav):not(nav *):not(code):not(pre):not(kbd):not(samp) {
+          font-family: ${selectedFontData.family} !important;
+        }
+        /* Specifically target non-mono elements */
+        .font-sans:not(.font-mono),
+        .font-header:not(.font-mono),
+        .font-body-text:not(.font-mono),
+        h1:not(.font-mono),
+        h2:not(.font-mono),
+        h3:not(.font-mono):not([class*="font-mono"]),
+        h4:not(.font-mono),
+        h5:not(.font-mono),
+        h6:not(.font-mono),
+        p:not(.font-mono):not([class*="font-mono"]),
+        [class*="font-header"]:not(.font-mono),
+        [class*="font-body-text"]:not(.font-mono) {
+          font-family: ${selectedFontData.family} !important;
+        }
+      `;
     }
   }, [selectedFont]);
 
