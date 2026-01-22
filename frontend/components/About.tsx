@@ -44,10 +44,10 @@ export const About: React.FC = () => {
                 About
               </h3>
               <div className="px-0 lg:pl-16">
-                <p className="text-zinc-300 leading-relaxed font-light text-left lg:text-justify" style={{ fontSize: '20px' }}>
+                <p className="text-zinc-300 leading-relaxed font-normal text-left lg:text-justify" style={{ fontSize: '20px' }}>
                   We are experimentalists who build production software as research, exploring affordances of new technological paradigms.
                 </p>
-                <p className="text-zinc-300 leading-relaxed font-light text-left lg:text-justify mt-6" style={{ fontSize: '20px' }}>
+                <p className="text-zinc-300 leading-relaxed font-normal text-left lg:text-justify mt-6" style={{ fontSize: '20px' }}>
                   Extending individual capabilities towards self-actualisation while exploring non-coercive pathways towards collective cohesion are primary motivations behind our expeditions into the dark forest.
                 </p>
 

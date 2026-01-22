@@ -20,24 +20,24 @@ export const Navbar: React.FC = () => {
       <div className="max-w-[1600px] mx-auto px-6 h-20 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <img src={curveLogo} alt="Curve Labs" className="h-8 w-auto" />
-          <span className="font-nav text-base font-bold tracking-[0.1em] uppercase">Curve Labs</span>
+          <span className="font-mono text-base font-bold tracking-[0.1em] uppercase">Curve Labs</span>
         </div>
 
         <div className="hidden md:flex gap-10">
           <a
             href="#offerings"
             onClick={handleNavClick('offerings')}
-            className="font-nav text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+            className="font-mono text-sm font-medium text-zinc-400 hover:text-white transition-colors"
           >
             [01] DOMAINS
           </a>
-          <a href="#lace" onClick={handleNavClick('lace')} className="font-nav text-sm font-medium text-zinc-400 hover:text-white transition-colors">
+          <a href="#lace" onClick={handleNavClick('lace')} className="font-mono text-sm font-medium text-zinc-400 hover:text-white transition-colors">
             [02] LACE
           </a>
-          <a href="#about" onClick={handleNavClick('about')} className="font-nav text-sm font-medium text-zinc-400 hover:text-white transition-colors">
+          <a href="#about" onClick={handleNavClick('about')} className="font-mono text-sm font-medium text-zinc-400 hover:text-white transition-colors">
             [03] ABOUT
           </a>
-          <a href="#team" onClick={handleNavClick('team')} className="font-nav text-sm font-medium text-zinc-400 hover:text-white transition-colors">
+          <a href="#team" onClick={handleNavClick('team')} className="font-mono text-sm font-medium text-zinc-400 hover:text-white transition-colors">
             [04] TEAM
           </a>
         </div>

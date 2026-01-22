@@ -50,9 +50,9 @@ export const Offerings: React.FC = () => {
 
           {/* Header Column */}
           <div className="p-8 sm:p-12 border-b sm:border-b-0 sm:border-r border-border">
-            <h2 className="font-nav text-xs text-zinc-500 mb-4 uppercase tracking-widest">[01] Domains</h2>
+            <h2 className="font-mono text-xs text-zinc-500 mb-4 uppercase tracking-widest">[01] Domains</h2>
             <h3 className="text-xl sm:text-3xl font-header font-bold mb-6 tracking-tight">Domains</h3>
-            <p className="text-zinc-300 text-[18px] leading-relaxed font-body-text">
+            <p className="text-white text-[18px] leading-relaxed font-body-text">
               Our digital souls operate at two scales.
             </p>
           </div>
@@ -99,13 +99,13 @@ export const Offerings: React.FC = () => {
                 <div className="absolute inset-0 ring-1 ring-inset ring-border" />
 
                 {/* Number pinned to top */}
-                <div className="absolute left-8 top-8 sm:left-12 sm:top-12 z-10 font-nav text-3xl text-zinc-200 transition-colors group-hover:text-white">
+                <div className="absolute left-8 top-8 sm:left-12 sm:top-12 z-10 font-mono text-3xl text-zinc-200 transition-colors group-hover:text-white">
                   {domain.number}
                 </div>
 
                 {/* Content pinned to bottom */}
                 <div className="absolute bottom-0 left-0 right-0 z-10 px-8 sm:px-12 py-8 sm:py-12 text-left flex flex-col-reverse">
-                  <p className="text-zinc-200 text-[18px] leading-relaxed font-light h-[150px] overflow-hidden">
+                  <p className="text-zinc-300 text-[18px] leading-relaxed font-normal h-[150px] overflow-hidden">
                     {domain.description}
                   </p>
                   <h4 className="text-[30px] font-header font-bold mb-4 text-white">{domain.title}</h4>

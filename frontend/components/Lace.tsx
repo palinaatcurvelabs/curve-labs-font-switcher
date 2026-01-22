@@ -108,8 +108,10 @@ export const Lace: React.FC = () => {
                 <img src={laceStar} alt="" className="w-12 h-12 md:w-16 md:h-16" />
                 LACE
               </h2>
-              <p className="text-[16px] md:text-[18px] text-white font-light leading-relaxed max-w-2xl">
-                Graph-based knowledge infrastructure. Your documents, notes, and research become extensible structure with no overhead. AI for automated organization and research.
+              <p className="text-[16px] md:text-[20px] text-white leading-relaxed max-w-2xl">
+                Graph-based knowledge infrastructure.
+                <br /><br />
+                Your documents, notes, and research become extensible structure with no overhead. AI for automated organization and research.
               </p>
             </div>
 
@@ -130,7 +132,7 @@ export const Lace: React.FC = () => {
             {/* Black stripe on the right edge and beyond gutter */}
             <div className="absolute top-0 right-0 bottom-0 w-10 bg-background"></div>
             <div className="absolute top-0 left-full bottom-0 w-screen bg-background"></div>
-            <h3 className="hidden lg:block font-nav text-xs text-zinc-500 mb-8 uppercase tracking-widest border-b border-border pb-4 w-full">
+            <h3 className="hidden lg:block font-mono text-xs text-zinc-500 mb-8 uppercase tracking-widest border-b border-border pb-4 w-full">
               [02] Lace Research & Logs
             </h3>
 
@@ -140,7 +142,7 @@ export const Lace: React.FC = () => {
             >
               <div className="absolute top-3 left-4 z-20 flex items-center gap-2 pointer-events-none">
                 <div className="w-1.5 h-1.5 bg-cyan-300 rounded-full animate-pulse"></div>
-                <span className="text-[9px] font-nav text-cyan-300 uppercase tracking-widest opacity-70">
+                <span className="text-[9px] font-mono text-cyan-300 uppercase tracking-widest opacity-70">
                   Semantic Graph // 3D
                 </span>
               </div>
@@ -148,7 +150,7 @@ export const Lace: React.FC = () => {
                 <Suspense
                   fallback={
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="font-nav text-[10px] uppercase tracking-widest text-zinc-500">
+                      <div className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
                         Loading graph…
                       </div>
                     </div>
@@ -158,7 +160,7 @@ export const Lace: React.FC = () => {
                 </Suspense>
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="font-nav text-[10px] uppercase tracking-widest text-zinc-600">
+                  <div className="font-mono text-[10px] uppercase tracking-widest text-zinc-600">
                     Scroll to load
                   </div>
                 </div>

@@ -27,7 +27,7 @@
   <meta name="twitter:description" content="Curve Labs is a venture laboratory building digital souls through relational technologies." />
   <meta name="twitter:image" content="/curve-labs-logo.png" />
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
   <script>
     // Ensure the page always starts at the very top on first open / refresh.
@@ -48,6 +48,94 @@
     } catch { }
   </script>
   <style>
+    /* CSS Variables for dynamic font switching */
+    :root {
+      --font-main: 'Darker Grotesque';
+    }
+
+    /* Darker Grotesque - Sans-serif option */
+    @font-face {
+      font-family: 'Darker Grotesque';
+      src: url('/fonts/DarkerGrotesque-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Darker Grotesque';
+      src: url('/fonts/DarkerGrotesque-Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Darker Grotesque';
+      src: url('/fonts/DarkerGrotesque-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Darker Grotesque';
+      src: url('/fonts/DarkerGrotesque-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* Cardo - Serif option */
+    @font-face {
+      font-family: 'Cardo';
+      src: url('/fonts/Cardo-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Cardo';
+      src: url('/fonts/Cardo-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* EB Garamond - Serif option */
+    @font-face {
+      font-family: 'EB Garamond';
+      src: url('/fonts/EBGaramond-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'EB Garamond';
+      src: url('/fonts/EBGaramond-Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'EB Garamond';
+      src: url('/fonts/EBGaramond-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'EB Garamond';
+      src: url('/fonts/EBGaramond-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
     /* Florderuina Ruina font - ornate gothic blackletter with dotted style */
     @font-face {
       font-family: 'Florderuina';
@@ -91,13 +179,6 @@
       font-display: swap;
     }
 
-    @font-face {
-      font-family: 'Inter-Medium';
-      src: url('/fonts/Inter-Medium.woff2') format('woff2');
-      font-weight: 500;
-      font-style: normal;
-      font-display: swap;
-    }
 
     /* Custom scrollbar to match the technical aesthetic */
     ::-webkit-scrollbar {

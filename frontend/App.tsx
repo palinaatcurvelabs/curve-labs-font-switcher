@@ -8,6 +8,7 @@ import { Team } from './components/Team';
 import { CTA } from './components/CTA';
 import { Footer } from './components/Footer';
 import ContactOverlay from './components/ContactOverlay';
+import { FontSwitcher } from './components/FontSwitcher';
 
 let activeScrollRaf: number | null = null;
 
@@ -174,6 +175,8 @@ function App() {
       <React.Suspense fallback={null}>
         <ContactOverlay isOpen={isFormOpen} onClose={handleCloseForm} />
       </React.Suspense>
+
+      <FontSwitcher />
     </div>
   );
 }

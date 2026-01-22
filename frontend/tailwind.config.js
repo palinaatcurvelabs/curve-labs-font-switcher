@@ -10,12 +10,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['var(--font-main)', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
         display: ['Florderuina', 'sans-serif'],
-        header: ['Inter-Medium', 'sans-serif'],
-        'body-text': ['Inter', 'sans-serif'],
-        nav: ['IBM Plex Mono', 'monospace'],
+        header: ['var(--font-main)', 'sans-serif'],
+        'body-text': ['var(--font-main)', 'sans-serif'],
         'stitch-warrior': ['Stitch Warrior', 'sans-serif'],
       },
       colors: {
