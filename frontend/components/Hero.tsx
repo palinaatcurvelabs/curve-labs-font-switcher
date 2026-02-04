@@ -24,7 +24,7 @@ declare global {
 const UNICORN_ANIMATION_FILES: Record<AnimationMode, string> = {
   flower: '/unicorn-flower.json',
   liquify: '/unicorn-liquify.json',
-  flow: '/unicorn-flow.json',
+  flow: '/flow.json',
   sphere: '/unicorn-sphere.json',
 };
 
