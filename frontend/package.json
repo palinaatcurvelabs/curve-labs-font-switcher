@@ -14,7 +14,8 @@
     "lucide-react": "^0.555.0",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
-    "three": "^0.182.0"
+    "three": "^0.182.0",
+    "unicornstudio-react": "^2.0.1-1"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
